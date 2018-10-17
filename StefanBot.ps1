@@ -11,7 +11,7 @@
         $global:markov1["$($testArray[$i])"] += , $testArray[$i+1]
     }
 }
-
+<#
 $global:markov2 = @{}
 $global:markov1 = @{}
 
@@ -25,3 +25,7 @@ $line += if($markov2[$line[-1]].Count -ge 3)
 {($markov2[$line[-1]] | Get-Random)}
 else{($markov1[$line[-1]] | Get-Random)}
 } {$line -join ' '}
+
+#>
+
+$token = Get-Content 'C:\Users\playn_000\Documents\StefanBot\discord_token.txt'
